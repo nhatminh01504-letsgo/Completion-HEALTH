@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Listening Part 1 - Form Completion Strategy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { border-color: #16a34a; background-color: #f0fdf4; }
+    .incorrect { border-color: #dc2626; background-color: #fef2f2; }
+    .hidden-section { display: none; }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800">
+  <div class="max-w-6xl mx-auto p-6">
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold mb-2">IELTS Listening Part 1: Form Completion</h1>
+      <p class="text-lg">Level 5.5 Strategy Practice: Prediction • Numbers • Spellings</p>
+    </header>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Step 1: Before Listening - Predict the Answer Type</h2>
+      <p class="mb-4">Look at each gap and decide what kind of answer you need.</p>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-blue-50">
+          <h3 class="font-bold mb-2">Numbers</h3>
+          <p>Dates, years, prices, phone numbers</p>
+        </div>
+        <div class="p-4 rounded-xl bg-green-50">
+          <h3 class="font-bold mb-2">Spellings</h3>
+          <p>Names, streets, uncommon words</p>
+        </div>
+        <div class="p-4 rounded-xl bg-yellow-50">
+          <h3 class="font-bold mb-2">Vocabulary</h3>
+          <p>Activities, occupations, goals</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Step 2: Prediction Practice</h2>
+      <p class="mb-6">For each question, write what type of answer you predict.</p>
+      <div class="space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center gap-3">
+          <span class="font-medium">1. Last name:</span>
+          <select class="prediction border rounded-lg p-2" data-answer="spelling">
+            <option value="">Choose...</option>
+            <option value="number">Number</option>
+            <option value="spelling">Spelling</option>
+            <option value="activity">Activity</option>
+          </select>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center gap-3">
+          <span class="font-medium">2. Year:</span>
+          <select class="prediction border rounded-lg p-2" data-answer="number">
+            <option value="">Choose...</option>
+            <option value="number">Number</option>
+            <option value="spelling">Spelling</option>
+            <option value="occupation">Occupation</option>
+          </select>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center gap-3">
+          <span class="font-medium">4. Activities:</span>
+          <select class="prediction border rounded-lg p-2" data-answer="activity">
+            <option value="">Choose...</option>
+            <option value="number">Number</option>
+            <option value="spelling">Spelling</option>
+            <option value="activity">Activity</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="checkPredictions()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700">Check Predictions</button>
+      <p id="prediction-result" class="mt-4 font-semibold"></p>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Step 3: Practice the Form</h2>
+      <p class="mb-4">Use strategy: underline keywords, predict answer type, and listen carefully.</p>
+
+      <div class="border-2 border-slate-300 p-6 rounded-xl bg-slate-50">
+        <h3 class="text-3xl font-bold text-center mb-6">SARAH'S HEALTH & FITNESS CLUB MEMBERSHIP FORM</h3>
+        <div class="space-y-4 text-lg">
+          <p>First name: Harry</p>
+          <p>Last name: <input type="text" class="answer border-b-2 border-slate-400 bg-transparent px-2" data-answer="Parker"></p>
+          <p>Date of birth: Day: 11th, Month: December, Year: <input type="text" class="answer border-b-2 border-slate-400 bg-transparent px-2" data-answer="1998"></p>
+          <p>Type of Membership: <input type="text" class="answer border-b-2 border-slate-400 bg-transparent px-2" data-answer="Gold"></p>
+          <p>Activities: Badminton and <input type="text" class="answer border-b-2 border-slate-400 bg-transparent px-2" data-answer="swimming"></p>
+          <p>Payment details: Total: £450</p>
+          <p>To be paid: <input type="text" class="answer border-b-2 border-slate-400 bg-transparent px-2" data-answer="monthly"></p>
+        </div>
+      </div>
+
+      <button onclick="checkAnswers()" class="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700">Check Form Answers</button>
+      <p id="score" class="mt-4 text-xl font-bold"></p>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Step 4: Key Listening Strategies</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 bg-purple-50 rounded-xl">
+          <h3 class="font-bold mb-2">For Numbers:</h3>
+          <ul class="list-disc ml-5 space-y-1">
+            <li>Listen for dates, prices, years</li>
+            <li>Watch for corrections</li>
+            <li>Example: “1998... sorry, I mean 1988”</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-pink-50 rounded-xl">
+          <h3 class="font-bold mb-2">For Spellings:</h3>
+          <ul class="list-disc ml-5 space-y-1">
+            <li>Write each letter carefully</li>
+            <li>Common in names and addresses</li>
+            <li>Example: “P-A-R-K-E-R”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-semibold mb-4">Reflection</h2>
+      <p class="mb-2">Ask yourself:</p>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Did I predict the answer type before listening?</li>
+        <li>Did I focus on numbers and spellings?</li>
+        <li>Did I check word limits?</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    function checkPredictions() {
+      const selects = document.querySelectorAll('.prediction');
+      let score = 0;
+      selects.forEach(select => {
+        if (select.value === select.dataset.answer) {
+          score++;
+          select.classList.add('correct');
+          select.classList.remove('incorrect');
+        } else {
+          select.classList.add('incorrect');
+          select.classList.remove('correct');
+        }
+      });
+      document.getElementById('prediction-result').textContent = `You got ${score}/${selects.length} correct. Good prediction helps you listen better!`;
+    }
+
+    function checkAnswers() {
+      const answers = document.querySelectorAll('.answer');
+      let score = 0;
+      answers.forEach(input => {
+        if (input.value.trim().toLowerCase() === input.dataset.answer.toLowerCase()) {
+          score++;
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+        } else {
+          input.classList.add('incorrect');
+          input.classList.remove('correct');
+        }
+      });
+      document.getElementById('score').textContent = `Score: ${score}/${answers.length}`;
+    }
+  </script>
+</body>
+</html>
